@@ -17,7 +17,7 @@ public class Main {
         order.addOrderDetail(detail2);
 
         // Create Payment
-        Payment payment = new Credit(order.calcTotal(), "1234-5678-9876", "Visa", "12/26");
+        Credit payment = new Credit(order.calcTotal(), "1234-5678-9876", "Visa", "12/26");
 
         // Display Order and Payment Info
         System.out.println(order);
