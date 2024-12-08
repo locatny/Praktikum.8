@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         // Create Customer
-        Customer customer = new Customer("John Doe", "123 Main Street");
+        Customer customer = new Customer("Shin Winwin", "246 Main Street");
 
         // Create Items
         Item item1 = new Item("Laptop", 2.5);
@@ -12,7 +12,7 @@ public class Main {
         OrderDetail detail2 = new OrderDetail(item2, 2, "Taxable");
 
         // Create Order
-        Order order = new Order("2024-12-08", "Processing", customer);
+        Order order = new Order("2024-12-02", "Processing", customer);
         order.addOrderDetail(detail1);
         order.addOrderDetail(detail2);
 
