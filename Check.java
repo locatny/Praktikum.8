@@ -1,5 +1,5 @@
 public class Check extends Payment {
-    private String bankID;
+    private final String bankID;
 
     public Check(double amount, String bankID) {
         super(amount);
