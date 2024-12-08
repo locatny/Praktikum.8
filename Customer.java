@@ -2,5 +2,21 @@ public class Customer {
     private String name;
     private String address;
 
-    // Constructor, getter, and setter methods
+    public Customer(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer Name: " + name + ", Address: " + address;
+    }
 }
