@@ -1,18 +1,29 @@
 public class OrderDetail {
     private int quantity;
     private String taxStatus;
+    private Item item;
 
-    // Constructor, getter, and setter methods
+    public OrderDetail(Item item, int quantity, String taxStatus) {
+        this.item = item;
+        this.quantity = quantity;
+        this.taxStatus = taxStatus;
+    }
 
     public double calcSubTotal() {
-        // Implementation for calculating subtotal
+        return item.getPriceForQuantity(quantity);
     }
 
     public double calcWeight() {
-        // Implementation for calculating weight
+        return item.getShippingWeight() * quantity;
     }
 
     public double calcTax() {
-        // Implementation for calculating tax
+        return calcSubTotal() * item.getTax();
+    }
+
+    @Override
+    public String toString() {
+        return "Item: " + item.getDescription() + ", Quantity: " + quantity +
+               ", Subtotal: " + calcSubTotal() + ", Tax: " + calcTax();
     }
 }
