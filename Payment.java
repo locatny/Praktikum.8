@@ -1,5 +1,9 @@
 public abstract class Payment {
-    private double amount;
+    protected double amount;
 
-    // Constructor, getter, and setter methods
+    public Payment(double amount) {
+        this.amount = amount;
+    }
+
+    public abstract boolean authorized();
 }
