@@ -1,7 +1,7 @@
 public class Credit extends Payment {
-    private String number;
-    private String type;
-    private String expDate;
+    private final String number;
+    private final String type;
+    private final String expDate;
 
     public Credit(double amount, String number, String type, String expDate) {
         super(amount);
