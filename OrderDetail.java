@@ -1,7 +1,7 @@
 public class OrderDetail {
-    private int quantity;
-    private String taxStatus;
-    private Item item;
+    private final int quantity;
+    private final String taxStatus;
+    private final Item item;
 
     public OrderDetail(Item item, int quantity, String taxStatus) {
         this.item = item;
