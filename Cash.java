@@ -1,5 +1,10 @@
 public class Cash extends Payment {
-    private double cashTendered;
+    public Cash(double amount) {
+        super(amount);
+    }
 
-    // Constructor, getter, and setter methods
+    @Override
+    public boolean authorized() {
+        return true; // Cash is always authorized
+    }
 }
