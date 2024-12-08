@@ -1,22 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
-    private Date date;
+    private String date;
     private String status;
+    private Customer customer;
+    private List<OrderDetail> orderDetails = new ArrayList<>();
 
-    // Constructor, getter, and setter methods
-
-    public double calcSubTotal() {
-        // Implementation for calculating subtotal
+    public Order(String date, String status, Customer customer) {
+        this.date = date;
+        this.status = status;
+        this.customer = customer;
     }
 
-    public double calcTax() {
-        // Implementation for calculating tax
+    public void addOrderDetail(OrderDetail orderDetail) {
+        orderDetails.add(orderDetail);
     }
 
     public double calcTotal() {
-        // Implementation for calculating total
+        double total = 0.0;
+        for (OrderDetail od : orderDetails) {
+            total += od.calcSubTotal() + od.calcTax();
+        }
+        return total;
     }
 
     public double calcTotalWeight() {
-        // Implementation for calculating total weight
+        double totalWeight = 0.0;
+        for (OrderDetail od : orderDetails) {
+            totalWeight += od.calcWeight();
+        }
+        return totalWeight;
+    }
+
+    @Override
+    public String toString() {
+        return "Order Date: " + date + ", Status: " + status + "\nCustomer Info: " + customer +
+               "\nOrder Total: " + calcTotal() + ", Total Weight: " + calcTotalWeight();
     }
 }
