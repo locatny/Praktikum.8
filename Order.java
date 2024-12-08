@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private String date;
-    private String status;
-    private Customer customer;
-    private List<OrderDetail> orderDetails = new ArrayList<>();
+    private final String date;
+    private final String status;
+    private final Customer customer;
+    private final List<OrderDetail> orderDetails = new ArrayList<>();
 
     public Order(String date, String status, Customer customer) {
         this.date = date;
@@ -39,3 +39,4 @@ public class Order {
                "\nOrder Total: " + calcTotal() + ", Total Weight: " + calcTotalWeight();
     }
 }
+
