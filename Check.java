@@ -1,10 +1,14 @@
 public class Check extends Payment {
-    private String name;
     private String bankID;
 
-    // Constructor, getter, and setter methods
+    public Check(double amount, String bankID) {
+        super(amount);
+        this.bankID = bankID;
+    }
 
-    public void authorized() {
-        // Implementation for authorizing check
+    @Override
+    public boolean authorized() {
+        // Assume checks over $1000 are not authorized for simplicity
+        return amount <= 1000;
     }
 }
