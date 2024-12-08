@@ -1,18 +1,29 @@
 public class Item {
-    private double shippingWeight;
     private String description;
+    private double shippingWeight;
 
-    // Constructor, getter, and setter methods
+    public Item(String description, double shippingWeight) {
+        this.description = description;
+        this.shippingWeight = shippingWeight;
+    }
 
-    public double getPriceForQuantity() {
-        // Implementation for getting price for quantity
+    public double getPriceForQuantity(int quantity) {
+        return 10.0 * quantity; // Fixed price per item for simplicity
     }
 
     public double getTax() {
-        // Implementation for getting tax
+        return 0.1; // 10% tax
     }
 
     public boolean inStock() {
-        // Implementation for checking if item is in stock
+        return true; // Assume items are always in stock for this example
+    }
+
+    public double getShippingWeight() {
+        return shippingWeight;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
